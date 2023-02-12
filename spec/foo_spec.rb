@@ -9,9 +9,9 @@ RSpec.describe Foo do
         ['1234567', true],
         ['12345678', false],
         [1234567, false],
-      ].each do |postcode, expected|
-        it "#{postcode}の場合、#{expected}を返すこと"do
-          expect(described_class.valid_postcode?(postcode)).to eq expected
+      ].each do |input, expected|
+        it "#{input}の場合、#{expected}を返すこと"do
+          expect(described_class.valid_postcode?(input)).to eq expected
         end
       end
     end
@@ -40,9 +40,9 @@ RSpec.describe Foo do
         ['123.456', false],
         ['123456a', false],
         [1234567, false],
-      ].each do |postcode, expected|
-        it "#{postcode}の場合、#{expected}を返すこと"do
-          expect(described_class.valid_postcode?(postcode)).to eq expected
+      ].each do |input, expected|
+        it "#{input}の場合、#{expected}を返すこと"do
+          expect(described_class.valid_postcode?(input)).to eq expected
         end
       end
     end
